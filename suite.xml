@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="UITestingPlayGround">
+    <test name="UITestingPlayGround" >
+        <classes>
+            <class name="Test.TestElements"/>
+            <class name="Test.TestWebTablesElements"/>
+
+        </classes>
+    </test>
+</suite>
