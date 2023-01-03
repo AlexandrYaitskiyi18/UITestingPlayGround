@@ -1,8 +1,13 @@
 package Test;
 
 import Page.ElementsPage;
+import org.openqa.selenium.interactions.Action;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.beans.PropertyChangeListener;
 
 public class TestElements extends TestInit {
 
@@ -13,6 +18,12 @@ public class TestElements extends TestInit {
         Assert.assertTrue(elementsPage.menuElements().isDisplayed());
         Assert.assertTrue(elementsPage.menuTextBox().isDisplayed());
         Assert.assertTrue(elementsPage.menuCheckBox().isDisplayed());
+        Assert.assertTrue(elementsPage.menuRadioButton().isDisplayed());
+        Assert.assertTrue(elementsPage.menuWebTables().isDisplayed());
+        Assert.assertTrue(elementsPage.menuLinks().isDisplayed());
+        Assert.assertTrue(elementsPage.menuBrokenLinksImages().isDisplayed());
+        Assert.assertTrue(elementsPage.menuDynamicProperties().isDisplayed());
+        Assert.assertTrue(elementsPage.menuUploadAndDownload().isDisplayed());
 
         elementsPage.menuTextBox().click();
 
@@ -71,6 +82,23 @@ public class TestElements extends TestInit {
         elementsPage.inputRBImpressive().click();
 
         Assert.assertTrue(elementsPage.outResultRB().isDisplayed());
+
+    }
+
+    @Test
+    public void clickButtons(){
+        ElementsPage elementsPage = new ElementsPage(driver);
+        elementsPage.menuButtons().click();
+
+        Assert.assertTrue(elementsPage.doubleClickMe().isDisplayed());
+        Assert.assertTrue(elementsPage.rightClickMe().isDisplayed());
+       // Assert.assertTrue(elementsPage.clickMe().isDisplayed());
+
+
+
+
+
+
 
     }
 }

@@ -53,7 +53,6 @@ public class ElementsPage extends BasePage {
     }
 
 
-
     //TEXT BOX ELEMENTS:
     public WebElement inputFullName() {
         return driver.findElement(By.xpath("//input[@id='userName']"));
@@ -72,7 +71,7 @@ public class ElementsPage extends BasePage {
     }
 
     public WebElement buttonSubmit() {
-        return driver.findElement(By.xpath("//button[@id='submit']"));
+        return driver.findElement(By.xpath("//div[@class='text-right col-md-2 col-sm-12']/button[@id='submit']"));
     }
 
     public WebElement outPut() {
@@ -85,18 +84,22 @@ public class ElementsPage extends BasePage {
     public WebElement checkBox() {
         return driver.findElement(By.xpath("//button[@title='Toggle']"));
     }
+
     //поставити галочку в чекбокс
     public WebElement clickCheckBox() {
         return driver.findElement(By.xpath("//label[@for='tree-node-home']"));
     }
+
     //кнопка розгортання всього дерева
     public WebElement clickExpandAll() {
         return driver.findElement(By.xpath("//button[@title='Expand all']"));
     }
+
     //кнопка згортання всього дерева
     public WebElement clickCollapseAll() {
         return driver.findElement(By.xpath("//button[@title='Collapse all']"));
     }
+
     //Рядок рузультату вибору
     public WebElement outResult() {
         return driver.findElement(By.xpath("//div[@id='result']"));
@@ -124,7 +127,31 @@ public class ElementsPage extends BasePage {
         return driver.findElement(By.xpath("//p[text()='You have selected ']"));
     }
 
+    //BUTTONS ELEMENTS
 
+    public WebElement doubleClickMe() {
+        return driver.findElement(By.xpath("//button[@id='doubleClickBtn']"));
+    }
+
+    public WebElement rightClickMe() {
+        return driver.findElement(By.xpath("//button[@id='rightClickBtn']"));
+    }
+
+    public WebElement clickMe() {
+        return driver.findElement(By.xpath("//button[@id='IXspq']"));
+    }
+
+    public WebElement outDoubleClickMe() {
+        return driver.findElement(By.xpath("//p[@id='doubleClickMessage']"));
+    }
+
+    public WebElement outRightClickMe() {
+        return driver.findElement(By.xpath("//p[@id='rightClickMessage']"));
+    }
+
+    public WebElement outClickMe() {
+        return driver.findElement(By.xpath("//p[@id='dynamicClickMessage']"));
+    }
 
 
 
