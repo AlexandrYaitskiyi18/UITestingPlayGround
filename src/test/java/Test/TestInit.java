@@ -6,10 +6,15 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 @Listeners(TestListener.class)
@@ -19,11 +24,22 @@ public class TestInit {
     private boolean headless = true;
 
     @BeforeMethod
-    public void newDriver() {
+    public void newDriver() throws MalformedURLException {
         WebDriverManager.chromedriver().setup();
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.setHeadless(headless);
-        driver = new ChromeDriver(chromeOptions);
+        DesiredCapabilities capabilities = new DesiredCapabilities(chromeOptions);
+        capabilities.setCapability("browserName", "chrome");
+        capabilities.setCapability("browserVersion", "107.0");
+        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
+                "enableVNC", false,
+                "enableVideo", false
+        ));
+        driver = new RemoteWebDriver(
+                URI.create("http://localhost:4444/wd/hub").toURL() ,
+                capabilities
+        );
+
         if (headless==true) {
             Dimension d = new Dimension(1920, 1080);
             driver.manage().window().setSize(d);
