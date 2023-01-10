@@ -2,6 +2,8 @@ package Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import listener.TestListener;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -22,6 +24,7 @@ public class TestInit {
 
     WebDriver driver;
     private boolean headless = true;
+    private final Logger logger = LogManager.getLogger(TestInit.class);
 
     @BeforeMethod
     public void newDriver() throws MalformedURLException {
@@ -39,6 +42,7 @@ public class TestInit {
                 URI.create("http://localhost:4444/wd/hub").toURL() ,
                 capabilities
         );
+        logger.info("----- Start WebDriver -----");
 
         if (headless==true) {
             Dimension d = new Dimension(1920, 1080);
@@ -53,6 +57,7 @@ public class TestInit {
     @AfterMethod
     public void quit(){
         driver.quit();
+        logger.info("----- Close WebDriver -----");
     }
 
 
