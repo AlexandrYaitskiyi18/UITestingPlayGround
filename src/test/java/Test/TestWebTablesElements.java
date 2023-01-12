@@ -81,5 +81,5 @@ public class TestWebTablesElements extends TestInit {
         webTableElementsPage.inputFirstNameRegistration().sendKeys("Emmi");
         webTableElementsPage.buttonSubmitRegistration().click();
     }
-
+//wdaefea
 }

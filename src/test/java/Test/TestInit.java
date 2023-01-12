@@ -2,6 +2,7 @@ package Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import listener.TestListener;
+import lombok.extern.log4j.Log4j;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.Dimension;
@@ -20,6 +21,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 @Listeners(TestListener.class)
+
 public class TestInit {
 
     WebDriver driver;
