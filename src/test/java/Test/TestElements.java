@@ -1,13 +1,8 @@
 package Test;
 
 import Page.ElementsPage;
-import org.openqa.selenium.interactions.Action;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.beans.PropertyChangeListener;
 
 public class TestElements extends TestInit {
 

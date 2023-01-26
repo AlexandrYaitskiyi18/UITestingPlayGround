@@ -32,7 +32,14 @@ public class TestListener implements ITestListener {
         logger.info("     On Finish :-" + context.getName() + "                     ");
         logger.info("===============================================================");
     }
-//coments
+
+
+    @Override
+    public void onTestSuccess(ITestResult result) {
+        logger.info("---------------------------------------------------------------");
+        logger.info(result.getMethod().getMethodName() + " Passed");
+        logger.info("---------------------------------------------------------------");
+    }
 
 
 }

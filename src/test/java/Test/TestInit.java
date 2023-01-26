@@ -6,7 +6,6 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -20,6 +19,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 @Listeners(TestListener.class)
+
 public class TestInit {
 
     WebDriver driver;
@@ -33,10 +33,10 @@ public class TestInit {
         chromeOptions.setHeadless(headless);
         DesiredCapabilities capabilities = new DesiredCapabilities(chromeOptions);
         capabilities.setCapability("browserName", "chrome");
-        capabilities.setCapability("browserVersion", "107.0");
+        capabilities.setCapability("browserVersion", "108.0");
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
-                "enableVNC", false,
-                "enableVideo", false
+                "enableVNC", true,
+                "enableVideo", true
         ));
         driver = new RemoteWebDriver(
                 URI.create("http://localhost:4444/wd/hub").toURL() ,
