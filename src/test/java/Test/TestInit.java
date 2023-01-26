@@ -2,12 +2,10 @@ package Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import listener.TestListener;
-import lombok.extern.log4j.Log4j;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -35,7 +33,7 @@ public class TestInit {
         chromeOptions.setHeadless(headless);
         DesiredCapabilities capabilities = new DesiredCapabilities(chromeOptions);
         capabilities.setCapability("browserName", "chrome");
-        capabilities.setCapability("browserVersion", "107.0");
+        capabilities.setCapability("browserVersion", "108.0");
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true,
                 "enableVideo", true
