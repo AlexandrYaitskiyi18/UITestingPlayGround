@@ -35,8 +35,8 @@ public class TestInit {
         capabilities.setCapability("browserName", "chrome");
         capabilities.setCapability("browserVersion", "108.0");
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
-                "enableVNC", true,
-                "enableVideo", true
+                "enableVNC", false,
+                "enableVideo", false
         ));
         driver = new RemoteWebDriver(
                 URI.create("http://localhost:4444/wd/hub").toURL() ,
