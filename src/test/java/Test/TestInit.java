@@ -41,7 +41,7 @@ public class TestInit {
                 "enableVideo", false
         ));
         driver = new RemoteWebDriver(
-                URI.create("http://localhost:4444/wd/hub").toURL() ,
+                URI.create("http://172.17.0.2/localhost:4444/wd/hub").toURL() ,
                 capabilities
         );
         logger.info("----- Start WebDriver -----");
